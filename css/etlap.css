@@ -1,0 +1,42 @@
+.menu {
+    background-color: #f7efe6;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu h2 {
+    font-size: 2.5rem;
+    color: #4a3f35;
+    margin-bottom: 30px;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h3 {
+    font-size: 2rem;
+    color: #6b5a4b;
+    margin-bottom: 10px;
+}
+
+.menu-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-category ul li {
+    font-size: 1.1rem;
+    color: #4a3f35;
+    margin-bottom: 10px;
+}
+
+.menu-category ul li span {
+    float: right;
+    color: #8a7563;
+}
