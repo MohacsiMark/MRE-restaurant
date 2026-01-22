@@ -1,3 +1,8 @@
 .reservation-form input, .reservation-form select, .reservation-form textarea {/*afoglalas.html*/
     padding: 10px 0px;
 }
+
+.adatok{
+    float: left;
+}
+
