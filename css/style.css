@@ -6,26 +6,36 @@ body {
 }
 
 header {
-    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    position: relative;
     padding: 15px 40px;
     background-color: #efe4d6;
     border-bottom: 1px solid #d8cabb;
-    
 }
 
-.logo{
+.logo-nav {
+    height: 50px;
+    position: absolute;
+    left: 40px;
+}
+
+.logo-footer{
     height: 50px;
 }
 
-nav{
-    margin: auto;
+.nav-kepek svg{
+    height: 50px;
+    width: 50px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
 }
 
 nav a {
-    margin-left: 25px;
     text-decoration: none;
     color: #4a3f35;
     font-size: 1rem;
@@ -34,6 +44,12 @@ nav a {
 
 nav a:hover {
     color: #8a7563;
+}
+
+.account{
+    height: 50px;
+    position: absolute;
+    right: 40px;
 }
 
 footer {
