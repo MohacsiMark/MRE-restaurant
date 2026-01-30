@@ -132,20 +132,28 @@ function ShowBej() {
     reg.classList.add("hidden");
 }
 
-function showAlert(message, color = "red") {
-    let alertBox = document.querySelector(".alert");
-    if (!alertBox) {
-        alertBox = document.createElement("div");
-        alertBox.className = "alert";
-        document.querySelector(".content").prepend(alertBox);
-    }
+function showAlert(message) {
+    const overlay = document.createElement("div");
+    overlay.className = "custom-alert";
+
+    const content = document.createElement("div");
+    content.className = "alert-content";
+
+    const text = document.createElement("p");
+    text.textContent = message;
+
+    const btn = document.createElement("button");
+    btn.textContent = "Értettem";
     
-    alertBox.textContent = message;
-    alertBox.classList.remove("hidden");
-    alertBox.style.border = "2px solid " + color;
-    alertBox.style.color = color;
-    alertBox.style.padding = "10px";
-    alertBox.style.marginBottom = "10px";
+    btn.onclick = function() {
+        document.body.removeChild(overlay);
+    };
+
+    content.appendChild(text);
+    content.appendChild(btn);
+    overlay.appendChild(content);
+
+    document.body.appendChild(overlay);
 
     setTimeout(() => {
         alertBox.classList.add("hidden");
