@@ -366,3 +366,16 @@ iframe {
 .etlapelemek{
     cursor: pointer;
 }
+.hidden {
+    display: none;
+    width: 0px;
+    height: 0px;
+    z-index: -99;
+    border: none;
+    color: none;
+}
+.reg-span-link:hover {
+    cursor: pointer;
+    color: #8a7563;
+    text-decoration: underline;
+}

@@ -41,29 +41,57 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
         </svg>
     </header>
-<main>
-    <div class="registration-form">
-        <h3>Regisztráció</h3>
-        <form action="#" method="POST">
-            <label for="name">Neve:</label>
-            <input type="text" id="name" name="name" required>
+    <main class="content" >
+    <div class=" container form-section " id="register">
 
-            <label for="email">Email címe:</label>
-            <input type="email" id="email" name="email" required>
+      <form class="registration-form form-group " >
+        <h2 class="section-title">Regisztráció:</h2>
 
-            <label for="phone">Telefonszám:</label>
-            <input type="tel" id="phone" name="phone" required>
+        <label for="name">Neve:</label>
+        <input type="name" id="name" name="name" required>
 
-            <label for="phone">Jelszó:</label>
-            <input type="tel" id="phone" name="phone" required>
 
-            <label for="phone">Jelszó mégegyszer:</label>
-            <input type="tel" id="phone" name="phone" required>
+        <label for="email">E-mail cime:</label>
+        <input type="name" id="email" name="email" required>
 
-            <button type="submit">Regisztrálok</button>
-        </form>
+
+        <label for="phone">Telefonszám:</label>
+        <input type="name" id="phone" name="phone" required>
+
+        <label for="password">Jelszó:</label>
+        <input type="name" id="password" name="password" required>
+
+        <label for="password2">Jelszó mégegyszer:</label>
+        <input type="name" id="password2" name="password2" required>
+
+        <button type="button" class="btn-submit"">Regisztráció</button>
+        <h3 class="subsection-title-orange">Van profilja? <span class="reg-span-link" onclick="ShowBej()">Belépés</span></h3>
+
+        
+      </form>
     </div>
-</main>
+
+        <div class=" container form-section hidden"id="login" >
+
+      <form class="registration-form form-group" >
+                        <h2 class="section-title">Belépés:</h2>
+        <label for="email">E-mail:</label>
+        <input type="name" id="email" name="email" required>
+
+        <label for="name">Felhasználónév:</label>
+        <input type="name" id="name" name="name" required>
+
+        <label for="password">Jelszó:</label>
+        <input type="name" id="password" name="password" required>
+
+
+        <button type="button" class="btn-submit">Bejelentkezés</button>
+        <h3 class="subsection-title-orange">Nincs profilja? <span class="reg-span-link" onclick="ShowRegiszt()">Regisztráció</span></h3>
+
+      </form>
+    </div>
+    </main>
+
     <footer id="footerDatas">
         <div class="oszlop1">
             <img src="../img/MRElogo.png" alt="MRE" title="MRE" class="logo-footer">
@@ -90,5 +118,138 @@
             <button onclick="window.location.href='register.html'">Regisztrálok</button>
         </div>
     </footer>
+    <script>
+       const reg = document.getElementById("register");
+const bej = document.getElementById("login");
+
+function ShowRegiszt() {
+    bej.classList.add("hidden");
+    reg.classList.remove("hidden");
+}
+
+function ShowBej() {
+    bej.classList.remove("hidden");
+    reg.classList.add("hidden");
+}
+
+function showAlert(message, color = "red") {
+    let alertBox = document.querySelector(".alert");
+    if (!alertBox) {
+        alertBox = document.createElement("div");
+        alertBox.className = "alert";
+        document.querySelector(".content").prepend(alertBox);
+    }
+    
+    alertBox.textContent = message;
+    alertBox.classList.remove("hidden");
+    alertBox.style.border = "2px solid " + color;
+    alertBox.style.color = color;
+    alertBox.style.padding = "10px";
+    alertBox.style.marginBottom = "10px";
+
+    setTimeout(() => {
+        alertBox.classList.add("hidden");
+    }, 5000);
+}
+const registerForm = document.querySelector('#register form');
+registerForm.querySelector('.btn-submit').addEventListener("click", function() {
+    const name = registerForm.querySelector('input[name="name"]').value.trim();
+    const email = registerForm.querySelector('input[name="email"]').value.trim();
+    const phone = registerForm.querySelector('input[name="phone"]').value.trim();
+    const password = registerForm.querySelector('input[name="password"]').value.trim();
+    const password2 = registerForm.querySelector('input[name="password2"]').value.trim();
+
+    if (!email || !name || !phone || !password || !password2) {
+        showAlert("Kérjük, minden mezőt töltsön ki!");
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showAlert("Az e-mail cím formátuma nem megfelelő!");
+        return;
+    }
+
+    if (name.length < 6) {
+        showAlert("Adja meg a teljes nevét!");
+        return;
+    }
+    const phoneRegex = /^[0-9]{11}$/;
+    if (!phoneRegex.test(phone)) {
+        showAlert("A telefonszámnak pontosan 11 számjegyből kell állnia!(06xx1234567)");
+        return;
+    }
+
+    const specialCharRegex = /[!@#$%^&*()\-=_+\[\]{}|;:',.<>?]/;
+    const uppercaseRegex = /[A-Z]/;
+    const numberRegex = /[0-9]/;
+
+    if (password.length < 8) {
+        showAlert("A jelszónak legalább 8 karakternek kell lennie!");
+        return;
+    }
+    if (!uppercaseRegex.test(password)) {
+        showAlert("A jelszónak tartalmaznia kell legalább egy nagybetűt!");
+        return;
+    }
+    if (!numberRegex.test(password)) {
+        showAlert("A jelszónak tartalmaznia kell legalább egy számot!");
+        return;
+    }
+    if (!specialCharRegex.test(password)) {
+        showAlert("A jelszónak tartalmaznia kell legalább egy speciális karaktert!");
+        return;
+    }
+
+    if (password !== password2) {
+        showAlert("A két jelszó nem egyezik!");
+        return;
+    }
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith("user_")) {
+            const userData = JSON.parse(localStorage.getItem(key));
+            if (userData.email === email) {
+                showAlert("Ez az email már regisztrálva van!");
+                return;
+            }
+            if (userData.name === name) {
+                showAlert("Ez a felhasználónév már foglalt!");
+                return;
+            }
+        }
+    }
+
+    const newUser = { email, name, phone, password };
+    localStorage.setItem("user_" + name, JSON.stringify(newUser));
+    showAlert("Regisztráció sikeres!", "green");
+    setTimeout(ShowBej, 2000);
+});
+
+const loginForm = document.querySelector('#login form');
+loginForm.querySelector('.btn-submit').addEventListener("click", function() {
+    const emailInput = loginForm.querySelector('input[name="email"]').value.trim();
+    const nameInput = loginForm.querySelector('input[name="name"]').value.trim();
+    const passwordInput = loginForm.querySelector('input[name="password"]').value.trim();
+
+    if (!emailInput || !nameInput || !passwordInput) {
+        showAlert("Kérlek, töltsd ki az összes mezőt a belépéshez!");
+        return;
+    }
+
+    const userDataJson = localStorage.getItem("user_" + nameInput);
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        if (userData.email === emailInput && userData.password === passwordInput) {
+            localStorage.setItem("logged_in_user", JSON.stringify(userData));
+            showAlert("Sikeres bejelentkezés!", "green");
+        } else {
+            showAlert("Hibás email cím vagy jelszó!");
+        }
+    } else {
+        showAlert("Nincs ilyen nevű felhasználó!");
+    }
+});
+    </script>
 </body>
 </html>
