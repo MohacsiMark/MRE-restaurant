@@ -268,8 +268,8 @@ iframe {
 }
 .hero {
     text-align: center;
-    background-color: #EEE0C5;
-    padding: 100px 20px;
+    background-color: #f7efe6;
+    padding: 120px 20px ;
 }
 
 .hero h1 {
@@ -381,3 +381,13 @@ iframe {
     color: #8a7563;
     text-decoration: underline;
 }
+.show-password-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    gap: 10px;
+    margin: 12px auto;
+    width: 100%;
+    text-align: center;
+}
+

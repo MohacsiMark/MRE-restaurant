@@ -45,7 +45,7 @@
 
     </header>
     <main class="content" >
-    <div class=" container form-section " id="register">
+    <div class="hero" id="register">
 
       <form class="registration-form form-group " >
         <h2 class="section-title">Regisztráció:</h2>
@@ -65,19 +65,28 @@
         <input type="name" id="password" name="password" required>
 
         <label for="password2">Jelszó mégegyszer:</label>
-        <input type="name" id="password2" name="password2" required>
+
+        <input type="name" id="password2" name="password2" required> 
+        
+        <div class="show-password-line">
+        <label for="showpassword">Jelszó elrejtése:</label>
+        <input type="checkbox"
+           id="showpassword"
+           onclick="jelszohidden('password','password2')" style="width:20px; height:20px;margin-top: 10px;">
+        </div>
 
         <button type="button" class="btn-submit"">Regisztráció</button>
+
         <h3 class="subsection-title-orange">Van profilja? <span class="reg-span-link" onclick="ShowBej()">Belépés</span></h3>
 
         
       </form>
     </div>
 
-        <div class=" container form-section hidden"id="login" >
+        <div class=" hero hidden"id="login" >
 
       <form class="registration-form form-group" >
-                        <h2 class="section-title">Belépés:</h2>
+        <h2 class="section-title">Belépés:</h2>
         <label for="email">E-mail:</label>
         <input type="name" id="email" name="email" required>
 
@@ -85,8 +94,17 @@
         <input type="name" id="name" name="name" required>
 
         <label for="password">Jelszó:</label>
-        <input type="name" id="password" name="password" required>
+        <input type="name" id="passwordlog" name="passwordlog" required>
 
+        <label for="password2">Jelszó mégegyszer:</label>
+        <input type="name" id="password2log" name="password2log" required> 
+        
+        <div class="show-password-line">
+        <label for="showpassword">Jelszó elrejtése:</label>
+        <input type="checkbox"
+           id="showpassword"
+           onclick="jelszohiddenlogin('passwordlog','password2log')" style="width:20px; height:20px;margin-top: 10px;">
+        </div>
 
         <button type="button" class="btn-submit">Bejelentkezés</button>
         <h3 class="subsection-title-orange">Nincs profilja? <span class="reg-span-link" onclick="ShowRegiszt()">Regisztráció</span></h3>
@@ -261,6 +279,17 @@ loginForm.querySelector('.btn-submit').addEventListener("click", function() {
         showAlert("Nincs ilyen nevű felhasználó!");
     }
 });
+
+
+// Jelszó mutatása/rejtése
+function jelszohidden(password, password2) 
+{ document.getElementById(password).type = document.getElementById(password).type === 'password' ? 'text' : 'password'; 
+    document.getElementById(password2).type = document.getElementById(password2).type === 'password' ? 'text' : 'password';
+}
+function jelszohiddenlogin(passwordlog, password2log) 
+{ document.getElementById(passwordlog).type = document.getElementById(passwordlog).type === 'password' ? 'text' : 'password'; 
+    document.getElementById(password2log).type = document.getElementById(password2log).type === 'password' ? 'text' : 'password';
+}
     </script>
 </body>
 </html>
