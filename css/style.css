@@ -398,4 +398,7 @@ iframe {
     width: 100%;
     text-align: center;
 }
+ #name, #email, #phone, #password, #password2, #passwordlog, #password2log {
+    padding-left: 10px;
 
+}
