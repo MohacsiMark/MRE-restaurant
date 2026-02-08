@@ -60,6 +60,14 @@ footer {
     font-size: 1rem;
     color: #4a3f35;
     border-top: 1px solid #d8cabb;
+    background-image: url(../img/footer-kep2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.oszlop1, .oszlop2, .oszlop3 {
+
 }
 
 .fix_footer{
