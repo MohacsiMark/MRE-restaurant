@@ -62,11 +62,11 @@
         <input type="name" id="phone" name="phone" required>
 
         <label for="password">Jelszó:</label>
-        <input type="name" id="password" name="password" required>
+        <input type="password" id="password" name="password" required>
 
         <label for="password2">Jelszó mégegyszer:</label>
 
-        <input type="name" id="password2" name="password2" required> 
+        <input type="password" id="password2" name="password2" required> 
         
         <div class="show-password-line">
         <label for="showpassword">Jelszó elrejtése:</label>
@@ -82,7 +82,6 @@
         
       </form>
     </div>
-
         <div class=" hero hidden"id="login" >
 
       <form class="registration-form form-group" >
@@ -94,10 +93,10 @@
         <input type="name" id="name" name="name" required>
 
         <label for="password">Jelszó:</label>
-        <input type="name" id="passwordlog" name="passwordlog" required>
+        <input type="password" id="passwordlog" name="passwordlog" required>
 
         <label for="password2">Jelszó mégegyszer:</label>
-        <input type="name" id="password2log" name="password2log" required> 
+        <input type="password" id="password2log" name="password2log" required> 
         
         <div class="show-password-line">
         <label for="showpassword">Jelszó elrejtése:</label>
@@ -281,14 +280,13 @@ loginForm.querySelector('.btn-submit').addEventListener("click", function() {
 });
 
 
-// Jelszó mutatása/rejtése
 function jelszohidden(password, password2) 
-{ document.getElementById(password).type = document.getElementById(password).type === 'password' ? 'text' : 'password'; 
-    document.getElementById(password2).type = document.getElementById(password2).type === 'password' ? 'text' : 'password';
+{ document.getElementById(password).type = document.getElementById(password).type === 'text' ? 'password' : 'text'; 
+    document.getElementById(password2).type = document.getElementById(password2).type === 'text' ? 'password' : 'text';
 }
 function jelszohiddenlogin(passwordlog, password2log) 
-{ document.getElementById(passwordlog).type = document.getElementById(passwordlog).type === 'password' ? 'text' : 'password'; 
-    document.getElementById(password2log).type = document.getElementById(password2log).type === 'password' ? 'text' : 'password';
+{ document.getElementById(passwordlog).type = document.getElementById(passwordlog).type === 'text' ? 'password' : 'text'; 
+    document.getElementById(password2log).type = document.getElementById(password2log).type === 'text' ? 'password' : 'text';
 }
     </script>
 </body>
