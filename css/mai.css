@@ -3,7 +3,7 @@
 }
 
 main {
-    min-height: calc(100vh - 85px - 222.88px);
+    min-height: calc(100vh - 55px - 222.88px);
 }
 
 footer {
@@ -24,23 +24,21 @@ footer {
     box-sizing: border-box;
 }
 
-.oszlop1 ul{
-    list-style: none;
-}
-
-.oszlop1 img{
-    padding-left: 40px;
-    display: block;
-    margin: auto;
-}
-
 .oszlop1{
     margin: auto 0 auto 0;
 }
 
+.oszlop1 ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
 .oszlop2 ul{
     list-style: none;
-    margin-left: -40px;
+    padding: 0;
+    margin: 0;
 }
 
 .oszlop3{
@@ -54,6 +52,14 @@ footer {
     color: #f3e9dd;
     border-radius: 5px;
     font-size: larger;
+}
+
+.oszlop1,
+.oszlop2,
+.oszlop3{
+    background: rgba(238, 224, 197, 0.9);
+    padding: 20px 25px;
+    border-radius: 15px;
 }
 
 /*register page*/

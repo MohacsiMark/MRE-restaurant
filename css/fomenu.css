@@ -51,7 +51,6 @@
 .slider {
     max-width: 1200px;
     margin: 20px auto;
-    margin-top: -300px;
     overflow: hidden;
     position: relative;
     height: 400px;
@@ -95,4 +94,38 @@
 
 .slide a:hover{
     font-size: 1.1em;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-33.33%);
+    }
+
+    40% {
+        transform: translateX(-33.33%);
+    }
+
+    55% {
+        transform: translateX(-66.66%);
+    }
+
+    70% {
+        transform: translateX(-66.66%);
+    }
+
+    85% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
