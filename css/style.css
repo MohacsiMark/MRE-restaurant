@@ -411,3 +411,17 @@ iframe {
     padding-left: 10px;
 
 }
+
+::-webkit-scrollbar {
+width: 12px;
+}
+
+::-webkit-scrollbar-track {
+background: #EEE0C5;
+}
+
+::-webkit-scrollbar-thumb {
+background: #4a3f35; 
+border: 1px solid #EEE0C5; 
+border-radius: 10px;
+}
