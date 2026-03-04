@@ -26,6 +26,7 @@ footer {
 
 .oszlop1{
     margin: auto 0 auto 0;
+    margin-right: 135.86px;
 }
 
 .oszlop1 ul{
@@ -33,7 +34,6 @@ footer {
     padding: 0;
     margin: 0;
 }
-
 
 .oszlop2 ul{
     list-style: none;
