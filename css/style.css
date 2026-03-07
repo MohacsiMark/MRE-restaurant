@@ -425,3 +425,16 @@ background: #4a3f35;
 border: 1px solid #EEE0C5; 
 border-radius: 10px;
 }
+
+#uzenet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    text-align: center;
+    font-size: 100px;
+}
+
+#back{
+    font-size: 20px;
+}
