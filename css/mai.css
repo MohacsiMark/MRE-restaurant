@@ -65,7 +65,7 @@ footer {
 .oszlop-kep {
     margin: auto 0 auto 0;
     display: flex;
-    gap: 25px;
+    gap: 15px;
 }
 
 .oszlop-kep img {
