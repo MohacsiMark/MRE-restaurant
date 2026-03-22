@@ -1,0 +1,16 @@
+{
+  "imre_special": [
+    {
+      "nev": "Sajtos-tejfölös lángos",
+      "ar": 6713,
+      "kep": "../img/langos.png",
+      "ingredients": "Egyszerű, nagyon finom lángos"
+    },
+    {
+      "nev": "Palócleves gazdagon",
+      "ar": 6713,
+      "kep": "../img/paloc.png",
+      "ingredients": "Egyszerű, nagyon finom palócleves"
+    }
+  ]
+}

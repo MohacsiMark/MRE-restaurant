@@ -1,0 +1,28 @@
+{
+  "levesek": [
+    {
+      "nev": "Füstölt tőkehalleves",
+      "ar": 6990,
+      "kep": "../kepek-MRE/Fustolttokehalleves.jpg",
+      "ingredients": "Főbb összetevők: füstölt tőkehal, burgonya, tejszín Allergének: hal, tej"
+    },
+    {
+      "nev": "Fehér spárga krémleves",
+      "ar": 8990,
+      "kep": "../kepek-MRE/spargaleves.jpg",
+      "ingredients": "Főbb összetevők: fehér spárga, vaj, tejszín, liszt Allergének: tej, glutén"
+    },
+    {
+      "nev": "Sütőtök-krémleves",
+      "ar": 10990,
+      "kep": "../kepek-MRE/sutotok.jpg",
+      "ingredients": "Főbb összetevők: sütőtök, tejszín/kókusztej, olívaolaj Allergének: tej (ha kókusztejes: általában allergénmentes, de kókusz érzékenység előfordulhat)"
+    },
+    {
+      "nev": "Zeller velouté",
+      "ar": 12990,
+      "kep": "../kepek-MRE/zellerleves.jpg",
+      "ingredients": "Főbb összetevők: zeller, vaj, tejszín, liszt Allergének: zeller, tej, glutén"
+    }
+  ]
+}

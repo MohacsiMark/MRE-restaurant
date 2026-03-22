@@ -1,0 +1,28 @@
+{
+  "eloetelek": [
+    {
+      "nev": "Hummus pitta",
+      "ar": 11999,
+      "kep": "../kepek-MRE/hummus1.jpg",
+      "ingredients": "Főbb összetevők: csicseriborsó, tahini (szezámmag), citromlé, fokhagyma, olívaolaj Allergének: szezámmag (pita: glutén)"
+    },
+    {
+      "nev": "Bruschetta paradicsomos-fokhagymás",
+      "ar": 9990,
+      "kep": "../kepek-MRE/bruschetta.jpg",
+      "ingredients": "Főbb összetevők: pirított kenyér, paradicsom, fokhagyma, bazsalikom, olívaolaj Allergének: glutén"
+    },
+    {
+      "nev": "Tojásos pástétom pirítóssal",
+      "ar": 10990,
+      "kep": "../kepek-MRE/tojasospastetom.jpg",
+      "ingredients": "Főbb összetevők: libamáj, só, bors, tokaji bor/konyak, vaj vagy zsír Allergének: általában allergénmentes (ha kenyérrel tálalják: glutén) (ha vaj is kerül bele: tej)"
+    },
+    {
+      "nev": "Libamáj terrine",
+      "ar": 14990,
+      "kep": "../kepek-MRE/libamajterrine.jpg",
+      "ingredients": "Főbb összetevők: libamáj, vaj vagy zsír Allergének: általában allergénmentes (ha kenyérrel tálalják: glutén) (ha vaj is kerül bele: tej)"
+    }
+  ]
+}

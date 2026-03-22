@@ -1,0 +1,28 @@
+{
+  "foetelek": [
+    {
+      "nev": "Grillezett lazacfilé",
+      "ar": 5990,
+      "kep": "../kepek-MRE/lazac.jpg",
+      "ingredients": "Főbb összetevők: lazacfilé, olívaolaj, citrom, friss fűszerek Allergének: hal"
+    },
+    {
+      "nev": "Bográcsos pörkölt",
+      "ar": 9990,
+      "kep": "../kepek-MRE/bogracsos.jpg",
+      "ingredients": "Főbb összetevők: marhahús/sertéshús, fokhagyma, paprika, paradicsom Allergének: általában allergénmentes (ha csipetkével vagy galuskával készül: glutén, tojás)"
+    },
+    {
+      "nev": "Vegán lasagna",
+      "ar": 9990,
+      "kep": "../kepek-MRE/lazagna.jpg",
+      "ingredients": "Főbb összetevők: lasagne tészta, paradicsomszósz, zöldségek (cukkini, padlizsán, répa), növényi darált alap, növényi sajt vagy besamel (növényi tejből) Allergének: glutén (ha szójaalapú darált kerül bele: szója)"
+    },
+    {
+      "nev": "Sous-vide báránygerinc",
+      "ar": 19990,
+      "kep": "../kepek-MRE/baranygerinc.jpg",
+      "ingredients": "Főbb összetevők: báránygerinc, vaj, kakukkfű Allergének: tej (vaj miatt)"
+    }
+  ]
+}
