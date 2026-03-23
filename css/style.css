@@ -413,7 +413,6 @@ iframe {
 }
  #name, #email, #phone, #password, #password2, #passwordlog, #password2log {
     padding-left: 10px;
-
 }
 
 ::-webkit-scrollbar {
@@ -444,11 +443,67 @@ border-radius: 10px;
 }
 
 .motif{
-    max-width: 800px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
 .valaszto{
     border: none;
     border-top: 2px dotted #4a3f35;
     width: 550px;
+}
+
+@media (max-width: 992px) {
+
+    #footerDatas {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .oszlop1,
+    .oszlop2,
+    .oszlop3 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .oszlop1 ul,
+    .oszlop2 ul {
+        padding: 0;
+    }
+
+    .oszlop-kep {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #footerDatas {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .oszlop1,
+    .oszlop2,
+    .oszlop3 {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .oszlop-kep {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .valaszto {
+        width: 90%;
+    }
 }
