@@ -178,6 +178,10 @@ footer {
 .menu-container {
     max-width: 800px;
     margin: 0 auto;
+    background-color: #d8cabb;
+    padding: 10px;
+    border-radius: 25px;
+    border: #4a3f35 1px solid;
 }
 
 .menu h2 {
@@ -437,4 +441,14 @@ border-radius: 10px;
 
 #back{
     font-size: 20px;
+}
+
+.motif{
+    max-width: 800px;
+}
+
+.valaszto{
+    border: none;
+    border-top: 2px dotted #4a3f35;
+    width: 550px;
 }
