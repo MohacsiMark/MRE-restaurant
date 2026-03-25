@@ -455,24 +455,49 @@ border-radius: 10px;
     width: 550px;
 }
 
-@media (max-width: 992px) {
+.admin-item {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    background: #fff;
+}
 
-    #footerDatas {
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: #f7f7f7;
+    font-weight: bold;
+}
+
+.admin-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 12px;
+}
+
+.admin-item.active .admin-body {
+    max-height: 200px;
+    padding: 12px;
+}
+
+@media (max-width: 992px) {
+    #footerDatas, footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 25px;
     }
 
-    .oszlop1,
-    .oszlop2,
-    .oszlop3 {
+    .oszlop1, .oszlop2, .oszlop3 {
         width: 90%;
         margin: 0 auto;
     }
 
-    .oszlop1 ul,
-    .oszlop2 ul {
+    .oszlop1 ul, .oszlop2 ul {
         padding: 0;
     }
 
@@ -482,17 +507,15 @@ border-radius: 10px;
     }
 }
 
+/* Footer small screens */
 @media (max-width: 600px) {
-
     #footerDatas {
         flex-direction: column;
         gap: 20px;
         padding: 20px 10px;
     }
 
-    .oszlop1,
-    .oszlop2,
-    .oszlop3 {
+    .oszlop1, .oszlop2, .oszlop3 {
         width: 100%;
         padding: 15px;
     }
@@ -505,5 +528,25 @@ border-radius: 10px;
 
     .valaszto {
         width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .logo-nav, .logo-nev, .account {
+        position: static;
+        margin: 5px 0;
+    }
+
+    .nav-kepek {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
     }
 }

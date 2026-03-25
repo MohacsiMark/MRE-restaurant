@@ -155,6 +155,18 @@
 </footer>
 
     <script>
+    if (!localStorage.getItem("user_admin")) {
+        const adminUser = {
+            name: "admin",
+            email: "admin@admin.com",
+            phone: "00000000000",
+            password: "Adm!n123",
+            isAdmin: true
+        };
+
+        localStorage.setItem("user_admin", JSON.stringify(adminUser));
+    }
+
        const reg = document.getElementById("register");
 const bej = document.getElementById("login");
 
