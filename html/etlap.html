@@ -151,5 +151,48 @@
     </footer>
 
     <script src="../js/etlap.js"></script>
+    <script>
+        function showAlert(message) {
+    const overlay = document.createElement("div");
+    overlay.className = "custom-alert";
+
+    const content = document.createElement("div");
+    content.className = "alert-content";
+
+    const text = document.createElement("p");
+    text.textContent = message;
+
+    const btn = document.createElement("button");
+    btn.textContent = "Értettem";
+    
+    btn.onclick = function() {
+        document.body.removeChild(overlay);
+    };
+
+    content.appendChild(text);
+    content.appendChild(btn);
+    overlay.appendChild(content);
+
+    document.body.appendChild(overlay);
+
+    setTimeout(() => {
+        alertBox.classList.add("hidden");
+    }, 5000);
+}
+    function handleFoodClick(foodName, foodAllergens, foodIngredients) {
+        const loggedInUser = JSON.parse(localStorage.getItem("logged_in_user"));
+        const userAllergies = loggedInUser ? loggedInUser.allergies || [] : [];
+
+        const matches = userAllergies.filter(allergy => 
+            foodAllergens.toLowerCase().includes(allergy.toLowerCase())
+        );
+
+        if (matches.length > 0) {
+            alert(`FIGYELEM! \n\nEz az étel (${foodName}) tartalmazza: ${matches.join(", ")}`);
+        } else {
+            alert(`${foodName} összetevői: \n${foodIngredients}`);
+        }
+    }
+    </script>
 </body>
 </html>

@@ -91,8 +91,6 @@
 
       <form class="registration-form form-group" >
         <h2 class="section-title">Belépés:</h2>
-        <label for="email">E-mail:</label>
-        <input type="name" id="email" name="email" required>
 
         <label for="name">Neve:</label>
         <input type="name" id="name" name="name" required>
@@ -274,11 +272,10 @@ registerForm.querySelector('.btn-submit').addEventListener("click", function() {
 
 const loginForm = document.querySelector('#login form');
 loginForm.querySelector('.btn-submit').addEventListener("click", function() {
-    const emailInput = loginForm.querySelector('input[name="email"]').value.trim();
     const nameInput = loginForm.querySelector('input[name="name"]').value.trim();
     const passwordInput = loginForm.querySelector('input[name="passwordlog"]').value.trim();
 
-    if (!emailInput || !nameInput || !passwordInput) {
+    if (!nameInput || !passwordInput) {
         showAlert("Kérlek, töltsd ki az összes mezőt a belépéshez!");
         return;
     }
@@ -288,7 +285,7 @@ loginForm.querySelector('.btn-submit').addEventListener("click", function() {
     if (userDataJson) {
         const userData = JSON.parse(userDataJson);
         
-        if (userData.email === emailInput && userData.password === passwordInput) {
+        if (userData.password === passwordInput) {
 
             localStorage.setItem("logged_in_user", JSON.stringify(userData));
 
@@ -299,7 +296,7 @@ loginForm.querySelector('.btn-submit').addEventListener("click", function() {
             }, 2000);
             
         } else {
-            showAlert("Hibás email cím vagy jelszó!");
+            showAlert("Hibás jelszó!");
         }
     } else {
         showAlert("Nincs ilyen nevű felhasználó regisztrálva!");

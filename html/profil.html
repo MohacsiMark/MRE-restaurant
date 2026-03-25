@@ -168,23 +168,51 @@
                 <button onclick="logout()" class="btn-action" style="background: #d63031; width: 100%;">Kijelentkezés</button>
             </section>
 
-            <section class="card">
-                <h2>Rendelési előzmények</h2>
-                <div id="orders-container">
-                    <div class="order-item">
-                        <div>
-                            <strong>#1 - 1 SpárggKrém Leves -1 AlmásPite-1  Füstőlt Lazac</strong><br>
-                            <small>2024.05.20. 18:30</small>
-                        </div>
-                        <span style="color: green; font-weight: bold;">25.970 Ft</span>
-                    </div>
-                </div>
-            </section>
+        <section class="card">
+            <h2>Eddigi asztalfoglalásaim</h2>
+            <div id="bookings-container"></div>
+        </section>
 
         </div>
     </main>
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const loggedInUser = JSON.parse(localStorage.getItem("logged_in_user"));
+        const guestView = document.getElementById("guest-view");
+        const userView = document.getElementById("user-view");
+
+        if (loggedInUser) {
+            guestView.classList.add("hidden");
+            userView.classList.remove("hidden");
+            loadUserData(loggedInUser);
+            renderBookings(loggedInUser);
+        } else {
+            guestView.classList.remove("hidden");
+            userView.classList.add("hidden");
+        }
+    });
+
+    function renderBookings(user) {
+        const container = document.getElementById("bookings-container");
+        const bookings = user.bookings || [];
+
+        if (bookings.length === 0) {
+            container.innerHTML = "<p>Még nincs aktív foglalásod.</p>";
+            return;
+        }
+
+        container.innerHTML = bookings.map(b => `
+            <div class="order-item">
+                <div>
+                    <strong>${b.date} - ${b.time}</strong><br>
+                    <small>${b.guests} fő | Megjegyzés: ${b.note || "Nincs"}</small>
+                </div>
+                <span style="color: #e67e22; font-weight: bold;">Aktív</span>
+            </div>
+        `).join('');
+    }
+
         document.addEventListener("DOMContentLoaded", () => {
             const loggedInUser = JSON.parse(localStorage.getItem("logged_in_user"));
             const guestView = document.getElementById("guest-view");
@@ -241,6 +269,7 @@
             localStorage.removeItem("logged_in_user");
             window.location.reload(); 
         }
+
     </script>
 </body>
 </html>

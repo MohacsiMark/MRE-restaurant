@@ -4,25 +4,29 @@
       "nev": "Csokoládé mousse",
       "ar": 11990,
       "kep": "../kepek-MRE/csokimousse.jpg",
-      "ingredients": "Főbb összetevők: étcsokoládé, tojás, cukor, vaj vagy tejszín Allergének: tojás, tej (csokoládé tartalmazhat szója lecitint)"
+      "ingredients": "Főbb összetevők: étcsokoládé, tojás, cukor, vaj vagy tejszín",
+      "allergens": "Tojás, Laktóz, Szója (lecitin), nyomokban Mogyorót tartalmazhat"
     },
     {
       "nev": "Vaníliás panna cotta",
       "ar": 10990,
       "kep": "../kepek-MRE/pannacotta.jpg",
-      "ingredients": "Főbb összetevők: tejszín, cukor, vanília, zselatin Allergének: tej"
+      "ingredients": "Főbb összetevők: tejszín, cukor, vanília, zselatin",
+      "allergens": "Laktóz"
     },
     {
       "nev": "Almás pite",
       "ar": 10990,
       "kep": "../kepek-MRE/almaspite.jpg",
-      "ingredients": "Főbb összetevők: búzaliszt, vaj/margarin, cukor, tojás, alma, fahéj Allergének: glutén, tej, tojás"
+      "ingredients": "Főbb összetevők: búzaliszt, vaj/margarin, cukor, tojás, alma, fahéj",
+      "allergens": "Glutén, Laktóz, Tojás"
     },
     {
       "nev": "Tiramisu",
       "ar": 7990,
       "kep": "../kepek-MRE/tiramidus.jpg",
-      "ingredients": "Főbb összetevők: babapiskóta, mascarpone, tojás, cukor, kávé, kakaópor Allergének: glutén, tej, tojás"
+      "ingredients": "Főbb összetevők: babapiskóta, mascarpone, tojás, cukor, kávé, kakaópor",
+      "allergens": "Glutén, Laktóz, Tojás"
     }
   ]
 }

@@ -4,13 +4,15 @@
       "nev": "Sajtos-tejfölös lángos",
       "ar": 6713,
       "kep": "../img/langos.png",
-      "ingredients": "Egyszerű, nagyon finom lángos"
+      "ingredients": "Egyszerű, nagyon finom lángos",
+      "allergens": "Glutén (tészta), Laktóz (sajt, tejföl), nyomokban Szóját tartalmazhat (sütőolaj)"
     },
     {
       "nev": "Palócleves gazdagon",
       "ar": 6713,
       "kep": "../img/paloc.png",
-      "ingredients": "Egyszerű, nagyon finom palócleves"
+      "ingredients": "Egyszerű, nagyon finom palócleves",
+      "allergens": "Laktóz (tejfölös habarás), Glutén (habarás), nyomokban Tojást tartalmazhat"
     }
   ]
 }

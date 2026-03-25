@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="../css/mai.css">
     <link rel="icon" type="image/png" href="../img/MRElogo.png">
     <title>Asztalfoglalás - Étterem</title>
+    <style>
+        .hidden { display: none !important; }
+        .auth-needed { text-align: center; padding: 50px 20px; background: white; border-radius: 15px; margin: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn-action { background: #e67e22; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 20px; }
+    </style>
 </head>
 <body>
     <header>
@@ -50,87 +55,103 @@
             </a>
 
     </header>
-<main>
-    <section class="reservation-section">
-        <div class="reservation-container">
-            <h2>Asztalfoglalás</h2>
 
-            <div class="reservation-form">
-                <h3>Foglaljon asztalt nálunk!</h3>
-                <form action="#" method="POST">
-                    <label for="name">Neve:</label>
-                    <input type="text" id="name" name="name" required>
 
-                    <label for="email">Email címe:</label>
-                    <input type="email" id="email" name="email" required>
+    <main>
+        <section id="guest-view" class="auth-needed">
+            <h2>Asztalfoglaláshoz bejelentkezés szükséges</h2>
+            <p>Kérjük, jelentkezzen be, hogy asztalt foglalhasson!</p>
+            <a href="register.html" class="btn-action">Bejelentkezés / Regisztráció</a>
+        </section>
 
-                    <label for="phone">Telefonszám:</label>
-                    <input type="tel" id="phone" name="phone" required>
+        <section id="user-view" class="reservation-section hidden">
+            <div class="reservation-container">
+                <h2>Asztalfoglalás</h2>
+                <div class="reservation-form">
+                    <h3>Foglaljon asztalt nálunk!</h3>
+                    <form id="bookingForm">
+                        <label for="name">Neve:</label>
+                        <input type="text" id="name" name="name" required readonly>
 
-                    <label for="date">Foglalás dátuma:</label>
-                    <input type="date" id="date" name="date" required>
+                        <label for="date">Foglalás dátuma:</label>
+                        <input type="date" id="date" name="date" required>
 
-                    <label for="time">Foglalás ideje:</label>
-                    <input type="time" id="time" name="time" required>
+                        <label for="time">Foglalás ideje:</label>
+                        <input type="time" id="time" name="time" required>
 
-                    <label for="party-size">Létszám:</label>
-                    <select id="party-size" name="party-size" required>
-                        <option value="2">2 fő</option>
-                        <option value="3">3 fő</option>
-                        <option value="4">4 fő</option>
-                        <option value="5">5 fő</option>
-                        <option value="6">6 fő</option>
-                        <option value="7">7 fő</option>
-                        <option value="8">8 fő</option>
-                    </select>
+                        <label for="party-size">Létszám:</label>
+                        <select id="party-size" name="party-size" required>
+                            <option value="2">2 fő</option>
+                            <option value="4">4 fő</option>
+                            <option value="6">6 fő</option>
+                            <option value="8">8 fő</option>
+                        </select>
 
-                    <label for="special-requests">Különleges kérés (opcionális):</label>
-                    <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+                        <label for="special-requests">Különleges kérés:</label>
+                        <textarea id="special-requests" name="special-requests" rows="4"></textarea>
 
-                    <button type="submit">Foglalás küldése</button>
-                </form>
+                        <button type="submit">Foglalás küldése</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-</main>
-<footer id="footerDatas">
-    <div class="oszlop1">
-        <img src="../img/MRElogo.png" alt="MRE" title="MRE" class="logo-footer">
-        <ul>
-            <li><strong>Cím:</strong> Miskolc Palóczy László utca 3</li>
-            <li><strong>Telefon:</strong> +36 70 421 1367</li>
-            <li><strong>Email:</strong> info@etterem.hu</li>
-        </ul>
-    </div>
+        </section>
+    </main>
 
-    <div class="oszlop-kep">
-        <img src="../img/instagram.png" alt="insta">
-        <img src="../img/facebook.png" alt="face">
-    </div>
+    <script>
+    function showAlert(message) {
+        const overlay = document.createElement("div");
+        overlay.className = "custom-alert";
+        const content = document.createElement("div");
+        content.className = "alert-content";
+        const text = document.createElement("p");
+        text.textContent = message;
+        const btn = document.createElement("button");
+        btn.textContent = "Értettem";
+        btn.onclick = () => {
+            document.body.removeChild(overlay);
+            if(message.includes("Sikeres")) window.location.href = "profil.html";
+        };
+        content.appendChild(text);
+        content.appendChild(btn);
+        overlay.appendChild(content);
+        document.body.appendChild(overlay);
+    }
 
-    <div class="oszlop2">
-        <h1>Nyitvatartás:</h1>
-        <ul id="nyitvatartas">
-            <li>Hétfő: Zárva</li>
-            <li>Kedd: 10:00-22:00</li>
-            <li>Szerda: 10:00-22:00</li>
-            <li>Csütörtök: 10:00-22:00</li>
-            <li>Péntek: 9:00-23:00</li>
-            <li>Szombat: 9:00-23:00</li>
-            <li>Vasárnap: Zárva</li>                
-        </ul>
-    </div>
+    document.addEventListener("DOMContentLoaded", () => {
+        const loggedInUser = JSON.parse(localStorage.getItem("logged_in_user"));
+        const guestView = document.getElementById("guest-view");
+        const userView = document.getElementById("user-view");
 
-    <div class="oszlop-kep">
-        <img src="../img/twitter.png" alt="x">
-        <img src="../img/tik-tok.png" alt="tiktok">
-    </div>
+        if (loggedInUser) {
+            guestView.classList.add("hidden");
+            userView.classList.remove("hidden");
+            document.getElementById("name").value = loggedInUser.name;
+        }
 
-    <div class="oszlop3">
-        <p>Regisztrációval könnyeb az asztalfoglalás!</p>
-        <button onclick="window.location.href='register.html'">Regisztrálok</button>
-    </div>
-</footer>
+        document.getElementById("bookingForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const booking = {
+                id: Date.now(),
+                date: document.getElementById("date").value,
+                time: document.getElementById("time").value,
+                guests: document.getElementById("party-size").value,
+                note: document.getElementById("special-requests").value,
+                timestamp: new Date().toLocaleString()
+            };
 
+            const userKey = "user_" + loggedInUser.name;
+            const userData = JSON.parse(localStorage.getItem(userKey));
+            
+            if (!userData.bookings) userData.bookings = [];
+            userData.bookings.push(booking);
+            
+            localStorage.setItem(userKey, JSON.stringify(userData));
+            localStorage.setItem("logged_in_user", JSON.stringify(userData));
+
+            showAlert("Sikeres foglalás! Várunk szeretettel.");
+        });
+    });
+</script>
 </body>
 </html>
