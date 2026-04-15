@@ -148,7 +148,6 @@ footer {
 
 .reservation-form input, .reservation-form select, .reservation-form textarea {
     width: 100%;
-    padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #d8cabb;
     border-radius: 5px;
@@ -255,7 +254,7 @@ footer {
 
 .contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px 10px 0px;
     margin-bottom: 20px;
     border: 1px solid #d8cabb;
     border-radius: 5px;
@@ -410,9 +409,6 @@ iframe {
     margin: 12px auto;
     width: 100%;
     text-align: center;
-}
- #name, #email, #phone, #password, #password2, #passwordlog, #password2log {
-    padding-left: 10px;
 }
 
 ::-webkit-scrollbar {

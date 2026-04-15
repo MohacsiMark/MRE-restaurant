@@ -106,7 +106,7 @@ footer {
     display: block;
 }
 
-.registration-form input, .reservation-form select, .reservation-form textarea {
+.registration-form input {
     width: 100%;
     padding: 10px 0px;
     margin-bottom: 20px;
@@ -128,4 +128,30 @@ footer {
 
 .registration-form button:hover {
     background-color: #8a7563;
+}
+
+.fo{
+    text-align: center;
+}
+
+input, select {
+    text-align: center;
+    padding: 10px 15px;
+}
+
+textarea {
+    text-align: left;
+    padding: 15px 20px;
+}
+
+.contact-form textarea,
+.reservation-form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #d8cabb;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4a3f35;
+    padding: 10px 15px;
+    box-sizing: border-box;
 }
